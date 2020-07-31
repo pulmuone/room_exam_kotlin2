@@ -18,28 +18,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
-        R.layout.activity_main)
-
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-
-        //val viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        /*
-        viewModel.getAll().observe(this, Observer {
-            result_text.text = it.toString()
-        })
-         */
-
-        /*
-        add_button.setOnClickListener {
-            //Dispatchers.IO : Background Thread
-            //코루틴 사용한 비동기
-            lifecycleScope.launch(Dispatchers.IO) {
-                viewModel.insert(todo_edit.text.toString())
-            }
-        }
-         */
     }
 }
